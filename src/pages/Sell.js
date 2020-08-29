@@ -66,6 +66,14 @@ class Sell extends Component {
                       </div>
                       <input type="text" className="form-control" placeholder="Location " />
                     </div>
+		    
+		      <div className="input-group">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text">
+                        </span>
+                      </div>
+                      <input type="text" className="form-control" placeholder="Product Price ₹ " />
+                    </div>
                   
                     <div className="input-group">
                       <div className="input-group-prepend">
@@ -89,7 +97,7 @@ class Sell extends Component {
                         </span>
                       </div>
                       <label htmlFor="contactform-upload">Quantity :</label><br />
-                      <input type="number" placeholder="Product Price ₹" />
+                      <input type="number" placeholder="" />
                       
                       <select id="contactform-default-select">
                         <option value selected>Select</option>
