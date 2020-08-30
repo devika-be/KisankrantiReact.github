@@ -24,14 +24,10 @@ class Sell extends Component {
           </div>
         </nav>
 
-        <div className="section section-sell page-header" style={{backgroundImage: 'url(#)'}}>
+        <div style={{backgroundImage: 'url(assets/img/selling\ page.jpg)'}}>
         <div className="container">
           <div className="row">
             <div className="col-lg-9 col-md-10 mx-auto">
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-              <br /><br /><br /><br />
               <div className="card card-login">
                 <form className="form">
                   <div className="card-header card-header-success text-center">
