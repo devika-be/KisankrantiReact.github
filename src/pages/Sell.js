@@ -301,6 +301,20 @@ class Sell extends Component {
             </div>
           </div>
         </div></div>
+	   <footer className="footer footer-default bg-white">
+        <div className="container">
+          <nav className="float-left">
+            <ul>
+              <li>
+                <a href="Home.html">
+                  Kisankranti
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div className="copyright float-right">
+            Copyrights © 2020 All Rights Reserved by Kisankranti
+          </div></div></footer>    
      </div>
  </div> 
 	     );
