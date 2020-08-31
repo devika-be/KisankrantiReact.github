@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 class Sell extends Component {
+
   render() {
     return (
       <div>
@@ -402,5 +403,6 @@ class Sell extends Component {
       </div>
     );
   }
+
 }
 export default Sell;
