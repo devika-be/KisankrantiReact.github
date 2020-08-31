@@ -1,93 +1,116 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-class Login extends Component {
-    render() {
-        return (
-            <div>
-                <div>
-                    <nav className="navbar navbar-default navbar-expand-lg" role="navigation-demo">
-                        <div className="container">
-                            <div className="navbar-translate">
-                                <h3 className="title text-center"><Link to="/">Kisankranti</Link></h3>
-                                <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span className="sr-only">Toggle navigation</span>
-                                    <span className="navbar-toggler-icon" />
-                                    <span className="navbar-toggler-icon" />
-                                    <span className="navbar-toggler-icon" />
-                                </button>
-                            </div>
-                            <div className="collapse navbar-collapse">
-                                <ul className="navbar-nav ml-auto">
-                                    <Link to="/Register" className="btn btn-success btn-raised btn-round " data-toggle="dropdown" >Register </Link>
+import React from "react";
+import { Link } from "react-router-dom";
 
-                                    <Link to="/Sell" className="btn btn-info btn-raised btn-round " data-toggle="dropdown" >Sell Products </Link>
-                                </ul>
-                            </div>{/* /.navbar-collapse */}
-                        </div>{/* /.container*/}
-                    </nav>
-                    <div className="section section-signup page-header" style={{ backgroundImage: 'url("./assets/img/3-home.jpg")' }}>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-4 col-md-6 mx-auto">
-                                    <div className="card card-login">
-                                        <form className="form">
-                                            <div className="card-header card-header-success text-center">
-                                                <h4 className="card-title">Login To Kisankranti</h4>
-                                                <div className="social-line">
-                                                    <a href="javascript:;" className="btn btn-just-icon btn-link">
-                                                        <i className="fa fa-facebook-square" />
-                                                    </a>
+import { useInput } from "./UserInput";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
-                                                    <a href="javascript:;" className="btn btn-just-icon btn-link">
-                                                        <i className="fa fa-google-plus" />
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div className="card-body">
-                                                <div className="input-group">
-                                                    <div className="input-group-prepend">
-                                                        <span className="input-group-text">
-                                                        </span>
-                                                    </div>
-                                                    <input type="text" className="form-control" placeholder="Mobile Number" />
-                                                </div>
-                                                <div className="input-group">
-                                                    <div className="input-group-prepend">
-                                                        <span className="input-group-text">
-                                                        </span>
-                                                    </div>
-                                                    <input type="password" className="form-control" placeholder="Password" autoComplete />
-                                                </div>
-                                                <div className="input-group">
-                                                </div>
-                                                <div className="footer text-center">
-                                                    <a href="#" className="btn btn-success btn-raised btn-round">Login</a>
-                                                </div> 
+function Login({ setLoggedInStatus }) {
+  const history = useHistory();
+  const {
+    value: phoneNumber,
+    bind: bindPhoneNumber,
+    reset: resetPhoneNumber,
+  } = useInput("");
+  const {
+    value: password,
+    bind: bindPassword,
+    reset: resetPassword,
+  } = useInput("");
 
-                                                <br/>
-                                            </div></form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const url = "https://kisankranti.herokuapp.com/apiv1/login";
+    const req = {
+      phoneNumber,
+      password,
+    };
+
+    axios
+      .post(url, req)
+      .then(function (response) {
+        console.log(response.data);
+        console.log(response.data.error);
+
+        if (!response.data.error) {
+          setLoggedInStatus();
+          history.push("/");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    resetPhoneNumber();
+    resetPassword();
+  };
+  return (
+    <div>
+      <div>
+        <div
+          className="section section-signup page-header"
+          style={{ backgroundImage: 'url("./assets/img/3-home.jpg")' }}
+        >
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-4 col-md-6 mx-auto">
+                <div className="card card-login">
+                  <form onSubmit={handleSubmit} className="form">
+                    <div className="card-header card-header-success text-center">
+                      <h4 className="card-title">Login To Kisankranti</h4>
+                      <div className="social-line">
+                        <a href="" className="btn btn-just-icon btn-link">
+                          <i className="fa fa-facebook-square" />
+                        </a>
+
+                        <a href="" className="btn btn-just-icon btn-link">
+                          <i className="fa fa-google-plus" />
+                        </a>
+                      </div>
                     </div>
-                    <footer className="footer footer-default bg-white">
-        <div className="container">
-          <nav className="float-left">
-            <ul>
-              <li>
-                <a href="Home.html">
-                  Kisankranti
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div className="copyright float-right">
-            Copyrights © 2020 All Rights Reserved by Kisankranti
-          </div></div></footer>
+                    <div className="card-body">
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Mobile Number"
+                          {...bindPhoneNumber}
+                        />
+                      </div>
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
+                        </div>
+                        <input
+                          type="password"
+                          className="form-control"
+                          placeholder="Password"
+                          {...bindPassword}
+                        />
+                      </div>
+                      <div className="input-group"></div>
+                      <div className="footer text-center">
+                        <button
+                          type="submit"
+                          className="btn btn-success btn-raised btn-round"
+                        >
+                          Log in
+                        </button>
+                      </div>
+
+                      <br />
+                    </div>
+                  </form>
                 </div>
+              </div>
             </div>
-        );
-    }
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 export default Login;
