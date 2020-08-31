@@ -24,7 +24,7 @@ class Sell extends Component {
           </div>
         </nav>
 
-        <div style={{backgroundImage: 'url(assets/img/selling\ page.jpg)'}}>
+       <div  style={{backgroundImage: 'url("assets/img/selling\ page.jpg")'}}>
         <div className="container">
           <div className="row">
             <div className="col-lg-9 col-md-10 mx-auto">
