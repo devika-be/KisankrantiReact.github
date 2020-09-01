@@ -5,26 +5,6 @@ class OTP extends Component {
 	    return (
 		    <div>
                <div>
-        <nav className="navbar navbar-default navbar-expand-lg" role="navigation-demo">
-          <div className="container">
-            <div className="navbar-translate">
-            <h3 className="title text-center"><Link to="/">Kisankranti</Link></h3>
-              <button className="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="navbar-toggler-icon" />
-                <span className="navbar-toggler-icon" />
-                <span className="navbar-toggler-icon" />
-              </button>
-            </div>
-            <div className="collapse navbar-collapse">
-              <ul className="navbar-nav ml-auto">
-          <Link to="/Login" className="btn btn-success btn-raised btn-round " data-toggle="dropdown" >Login </Link>
-
-            <Link to="/Sell" className="btn btn-info btn-raised btn-round " data-toggle="dropdown" >Sell Products </Link>
-              </ul>
-            </div>
-          </div>
-        </nav>
         <div className="section section-signup page-header" style={{backgroundImage: 'url("./assets/img/3-home.jpg")'}}>
           <div className="container">
             <div className="row">
@@ -72,20 +52,6 @@ class OTP extends Component {
             </div>
           </div>
         </div>
-        <footer className="footer footer-default bg-white">
-        <div className="container">
-          <nav className="float-left">
-            <ul>
-              <li>
-                <a href="Home.html">
-                  Kisankranti
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div className="copyright float-right">
-            Copyrights © 2020 All Rights Reserved by Kisankranti
-          </div></div></footer>
       </div>
 
             </div>  
