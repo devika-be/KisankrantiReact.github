@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import ProfileImage from "../../../src/farmer.jpg";
+import "./Profile.scss";
 class Profile extends Component {
   render() {
     return (
@@ -15,7 +17,14 @@ class Profile extends Component {
                   <div className="card card-login">
                     <form className="form">
                       <div className="card-header card-header-success text-center">
-                        <h4 className="card-title">Profile From</h4>
+                        <h4 className="card-title">Profile </h4>
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <img
+                          src={ProfileImage}
+                          alt="profile-image"
+                          className="profile-image "
+                        />
                       </div>
                     </form>
                   </div>
@@ -23,20 +32,7 @@ class Profile extends Component {
               </div>
             </div>
           </div>
-          <footer className="footer footer-default bg-white">
-            <div className="container">
-              <nav className="float-left">
-                <ul>
-                  <li>
-                    <a href="Home.html">Kisankranti</a>
-                  </li>
-                </ul>
-              </nav>
-              <div className="copyright float-right">
-                Copyrights © 2020 All Rights Reserved by Kisankranti
-              </div>
-            </div>
-          </footer>
+          >
         </div>
       </div>
     );

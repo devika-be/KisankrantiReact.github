@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import OTP from "./pages/OTP";
 import Sell from "./pages/Sell";
-import Profile from "./pages/Profile";
+import Profile from "./pages/Profile/Profile";
 import Header from "./pages/NavBar/Header";
 import Footer from "./pages/Footer/Footer";
 
