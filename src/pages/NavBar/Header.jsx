@@ -57,8 +57,11 @@ function Header({ isLoggedIn }) {
               >
                 Sell Products{" "}
               </Link>
-
-              <i className="far fa-user-circle float-right ml-4"></i>
+              {isLoggedIn ? (
+                <Link to="/Profile">
+                  <i className="far fa-user-circle float-right ml-4"></i>
+                </Link>
+              ) : null}
             </ul>
           </div>
           {/* /.navbar-collapse */}
