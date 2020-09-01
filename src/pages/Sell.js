@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 class Sell extends Component {
-
   render() {
     return (
       <div>
         <div>
-          <div style={{ backgroundImage: 'url("assets/img/selling page.jpg")' }}>
+          <div
+            style={{ backgroundImage: 'url("assets/img/selling page.jpg")' }}
+          >
             <div className="container">
               <div className="row">
                 <div className="col-lg-9 col-md-10 mx-auto">
@@ -113,9 +114,7 @@ class Sell extends Component {
                           <input type="number" placeholder="" />
 
                           <select id="contactform-default-select">
-                            <option value selected>
-                              Select
-                            </option>
+                            <option hidden={true}>Select</option>
                             <option value="Box">Box</option>
                             <option value="Daba">Dozen</option>
                             <option value="Gms">Gms</option>
@@ -403,6 +402,5 @@ class Sell extends Component {
       </div>
     );
   }
-
 }
 export default Sell;
