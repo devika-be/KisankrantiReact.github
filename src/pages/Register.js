@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useInput } from "./UserInput";
+import { toast } from "react-toastify";
 
 function Register() {
   const {
@@ -25,6 +26,10 @@ function Register() {
     reset: resetPassword,
   } = useInput("");
 
+  //Toast notification when user log in successful
+  const notify = () => toast.success("Welcome David !");
+  const registerError = () => toast.error("Oops! Try again");
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const url = "https://kisankranti.herokuapp.com/apiv1/register";
@@ -42,6 +47,7 @@ function Register() {
       })
       .catch(function (error) {
         console.log(error);
+        registerError();
       });
     resetFirstName();
     resetLastName();
@@ -110,12 +116,12 @@ function Register() {
                       </div>
                     </div>
                     <div className="footer text-center">
-                      <Link
-                        to="/OTP"
+                      <button
+                        type="submit"
                         className="btn btn-success btn-raised btn-round"
                       >
-                        Send Varification Code
-                      </Link>
+                        Submit<Link to="/OTP"></Link>
+                      </button>
                     </div>
                   </form>
                 </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useInput } from "./UserInput";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 function Login({ setLoggedInStatus }) {
@@ -17,7 +18,7 @@ function Login({ setLoggedInStatus }) {
     bind: bindPassword,
     reset: resetPassword,
   } = useInput("");
-
+  const notify = () => toast.success("Welcome David !");
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const url = "https://kisankranti.herokuapp.com/apiv1/login";
@@ -34,6 +35,7 @@ function Login({ setLoggedInStatus }) {
 
         if (!response.data.error) {
           setLoggedInStatus();
+          notify();
           history.push("/");
         }
       })

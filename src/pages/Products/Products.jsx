@@ -10,9 +10,9 @@ class Products extends Component {
   render() {
     return (
       <div className=" products ">
-        <span className="h3 ml-2 text font-weight-bold text-center">
+        <p className="h3 ml-2 text font-weight-bold text-center">
           TOP PRODUCTS
-        </span>
+        </p>
         <div className="row mx-auto mt-2">
           {this.state.products.map((item) => (
             <ProductCard

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Header from "./NavBar/Header";
 import Products from "./Products/Products";
+import HomeCarousel from "./HomeCarousel/HomeCarousel";
 
 class Home extends Component {
   render() {
@@ -54,6 +55,7 @@ class Home extends Component {
           </div>
            * 
            */}
+          <HomeCarousel />
           <Products />
         </div>
       </div>
