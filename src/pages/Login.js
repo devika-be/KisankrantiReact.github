@@ -18,7 +18,10 @@ function Login({ setLoggedInStatus }) {
     bind: bindPassword,
     reset: resetPassword,
   } = useInput("");
+
+  //Toast notification when user log in successful
   const notify = () => toast.success("Welcome David !");
+  const loginError = () => toast.error("Oops! Try again");
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const url = "https://kisankranti.herokuapp.com/apiv1/login";
@@ -41,6 +44,8 @@ function Login({ setLoggedInStatus }) {
       })
       .catch(function (error) {
         console.log(error);
+
+        loginError();
       });
 
     resetPhoneNumber();
@@ -71,44 +76,28 @@ function Login({ setLoggedInStatus }) {
                       </div>
                     </div>
                     <div className="card-body">
-    
-                    
-                      <div className="col-lg-12 col-sm-6">
-                        <div className="form-group has-success">
-                          <label htmlFor="exampleInput" className="bmd-label-floating">Mobile Number</label>
-                          <input type="text" className="form-control" />
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
                         </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Mobile Number"
+                          {...bindPhoneNumber}
+                        />
                       </div>
-
-
-                      <div className="col-lg-12 col-sm-2">
-                        <div className="form-group has-success">
-                          <label htmlFor="exampleInput" className="bmd-label-floating">Password</label>
-                          <input type="password" className="form-control" autoComplete />
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
                         </div>
+                        <input
+                          type="password"
+                          className="form-control"
+                          placeholder="Password"
+                          {...bindPassword}
+                        />
                       </div>
-//                       <div className="input-group">
-//                         <div className="input-group-prepend">
-//                           <span className="input-group-text"></span>
-//                         </div>
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="Mobile Number"
-//                           {...bindPhoneNumber}
-//                         />
-//                       </div>
-//                       <div className="input-group">
-//                         <div className="input-group-prepend">
-//                           <span className="input-group-text"></span>
-//                         </div>
-//                         <input
-//                           type="password"
-//                           className="form-control"
-//                           placeholder="Password"
-//                           {...bindPassword}
-//                         />
-//                       </div>
                       <div className="input-group"></div>
                       <div className="footer text-center">
                         <button

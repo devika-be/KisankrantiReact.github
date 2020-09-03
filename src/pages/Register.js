@@ -27,7 +27,7 @@ function Register() {
   } = useInput("");
 
   //Toast notification when user log in successful
-  const notify = () => toast.success("Welcome David !");
+  const notify = () => toast.success("User Registeration Successful !");
   const registerError = () => toast.error("Oops! Try again");
 
   const handleSubmit = (evt) => {
@@ -44,6 +44,10 @@ function Register() {
       .post(url, req)
       .then(function (response) {
         console.log(response);
+
+        if (!response.data.error) {
+          notify();
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -63,96 +67,68 @@ function Register() {
         >
           <div className="container">
             <div className="row">
-              <div className="col-lg-5 col-md-6 mx-auto">
+              <div className="col-lg-4 col-md-6 mx-auto">
                 <div className="card card-login">
                   <form className="form" onSubmit={handleSubmit}>
                     <div className="card-header card-header-success text-center">
                       <h4 className="card-title">Register To Kisankranti</h4>
                     </div>
                     <div className="card-body">
-    
-                      <div>
-                        <div className="col-lg-12 col-sm-6">
-                          <div className="form-group has-success">
-                            <label htmlFor="exampleInput" className="bmd-label-floating">First Name</label>
-                            <input type="text" className="form-control" />
-                          </div>
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
                         </div>
-                        <div className="col-lg-12 col-sm-6">
-                          <div className="form-group has-success">
-                            <label htmlFor="exampleInput" className="bmd-label-floating">Last Name</label>
-                            <input type="text" className="form-control" />
-                          </div>
-                        </div>
-                        <div className="col-lg-12 col-sm-6">
-                          <div className="form-group has-success">
-                            <label htmlFor="exampleInput" className="bmd-label-floating">Mobile Number</label>
-                            <input type="text" className="form-control" />
-                          </div>
-                        </div>
-                        <div className="col-lg-12 col-sm-2">
-                          <div className="form-group has-success">
-                            <label htmlFor="exampleInput" className="bmd-label-floating">Password</label>
-                            <input type="password" className="form-control" autoComplete />
-                          </div>
-                        </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="First Name"
+                          {...bindFirstName}
+                        />
                       </div>
-    
-    
-//                       <div className="input-group">
-//                         <div className="input-group-prepend">
-//                           <span className="input-group-text"></span>
-//                         </div>
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="First Name"
-//                           {...bindFirstName}
-//                         />
-//                       </div>
-//                       <div className="input-group">
-//                         <div className="input-group-prepend">
-//                           <span className="input-group-text"></span>
-//                         </div>
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="Last Name"
-//                           {...bindLastName}
-//                         />
-//                       </div>
-//                       <div className="input-group">
-//                         <div className="input-group-prepend">
-//                           <span className="input-group-text"></span>
-//                         </div>
-//                         <input
-//                           type="text"
-//                           className="form-control"
-//                           placeholder="Mobile Number"
-//                           {...bindPhoneNumber}
-//                         />
-//                       </div>
-//                       <div className="input-group">
-//                         <div className="input-group-prepend">
-//                           <span className="input-group-text"></span>
-//                         </div>
-//                         <input
-//                           type="password"
-//                           className="form-control"
-//                           placeholder="Password"
-//                           {...bindPassword}
-//                         />
-//                       </div>
-//                     </div>
-                    <div className="footer text-center">
-                      <button
-                        type="submit"
-                        className="btn btn-success btn-raised btn-round"
-                      >
-                        Submit<Link to="/OTP"></Link>
-                      </button>
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Last Name"
+                          {...bindLastName}
+                        />
+                      </div>
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Mobile Number"
+                          {...bindPhoneNumber}
+                        />
+                      </div>
+                      <div className="input-group">
+                        <div className="input-group-prepend">
+                          <span className="input-group-text"></span>
+                        </div>
+                        <input
+                          type="password"
+                          className="form-control"
+                          placeholder="Password"
+                          {...bindPassword}
+                        />
+                      </div>
                     </div>
-                    <br />
+                    <div className="footer text-center">
+                      <Link to="/OTP">
+                        <button
+                          type="submit"
+                          className="btn btn-success btn-raised btn-round"
+                        >
+                          Submit
+                        </button>
+                      </Link>
+                    </div>
                   </form>
                 </div>
               </div>

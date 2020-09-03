@@ -23,7 +23,7 @@ class Profile extends Component {
                         <img
                           src={ProfileImage}
                           alt="profile-image"
-                          className="profile-image "
+                          className="profile-image mb-5"
                         />
                       </div>
                     </form>
@@ -32,7 +32,6 @@ class Profile extends Component {
               </div>
             </div>
           </div>
-          >
         </div>
       </div>
     );

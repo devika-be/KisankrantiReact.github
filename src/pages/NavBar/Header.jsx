@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-function Header({ isLoggedIn }) {
+import ProfileDropDown from "../ProfileDropdown/ProfileDropdown";
+function Header({ isLoggedIn, isHidden, toggleHidden }) {
   return (
     <div>
       <nav
@@ -59,9 +60,14 @@ function Header({ isLoggedIn }) {
               </Link>
               {isLoggedIn ? (
                 <Link to="/Profile">
-                  <i className="far fa-user-circle float-right ml-4"></i>
+                  <i
+                    onClick={toggleHidden}
+                    className="far fa-user-circle float-right ml-4"
+                  />
                 </Link>
               ) : null}
+
+              {/*  {!isHidden ? <ProfileDropDown /> : null}*/}
             </ul>
           </div>
           {/* /.navbar-collapse */}

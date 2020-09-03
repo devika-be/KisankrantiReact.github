@@ -82,7 +82,6 @@ function OTP() {
                           type="password"
                           className="form-control"
                           placeholder="Enter New Password"
-                          autoComplete="true"
                         />
                       </div>
                       <div className="input-group">
@@ -93,7 +92,6 @@ function OTP() {
                           type="password"
                           className="form-control"
                           placeholder="Confirm Password"
-                          autoComplete="true"
                         />
                       </div>
                       <div className="input-group">
