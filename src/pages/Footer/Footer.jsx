@@ -14,6 +14,7 @@ function Footer() {
           </nav>
           <div className="copyright float-right">
             Copyrights © 2020 All Rights Reserved by Kisankranti
+            Copyrights © 2020 All Rights Reserved by Kisankranti
           </div>
         </div>
       </footer>
