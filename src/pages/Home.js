@@ -21,7 +21,7 @@ class Home extends Component {
               <div className="row">
                 <div className="col-md-8 ml-auto mr-auto">
                   <div className="brand text-center">
-                    <h1 className="title text-center">Kisankrant</h1>
+                    <h1 className="title text-center">Kisankranti</h1>
                     <h3>
                       {" "}
                       Connecting Farmers, Customers, Wholesalers & Retailers on
